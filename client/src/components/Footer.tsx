@@ -10,15 +10,24 @@ export default function Footer() {
             <img src="/logo.svg" alt="Logo" className="h-10 mt-1.5" />
           </Link>
 
-          <p className="text-black/55 text-sm leading-relaxed pr-4">Connecting discerning palates with the world's most exceptional culinary experiences.</p>
+          <p className="text-black/55 text-sm leading-relaxed pr-4">
+            Connecting discerning palates with the world's most exceptional
+            culinary experiences.
+          </p>
         </div>
 
         {footerSections.map((section) => (
           <div key={section.title} className="flex flex-col gap-4">
-            <h4 className="text-xs font-medium tracking-widest text-primary uppercase">{section.title}</h4>
+            <h4 className="text-xs font-medium tracking-widest text-primary uppercase">
+              {section.title}
+            </h4>
 
             {section.links.map((link) => (
-              <Link key={link.label} to={link.path} className="text-sm text-black/55 hover:text-secondary transition-colors">
+              <Link
+                key={link.label}
+                to={link.path}
+                className="text-sm text-black/55 hover:text-secondary transition-colors"
+              >
                 {link.label}
               </Link>
             ))}
@@ -26,13 +35,19 @@ export default function Footer() {
         ))}
 
         <div className="flex flex-col gap-4">
-          <h4 className="text-xs font-medium tracking-widest text-primary uppercase">CONTACT</h4>
+          <h4 className="text-xs font-medium tracking-widest text-primary uppercase">
+            CONTACT
+          </h4>
 
           <p className="text-sm text-black/55">support@example.com</p>
 
           <div className="flex gap-4 mt-2">
             {socialLinks.map(({ icon: Icon, href }, index) => (
-              <a key={index} href={href} className="text-black/55 hover:text-secondary transition-colors">
+              <a
+                key={index}
+                href={href}
+                className="text-black/55 hover:text-secondary transition-colors"
+              >
                 <Icon size={18} />
               </a>
             ))}
@@ -41,11 +56,17 @@ export default function Footer() {
       </div>
 
       <div className="max-w-7xl mx-auto px-6 md:px-10 mt-16 pt-8 border-t border-outline-variant/10 flex flex-col md:flex-row justify-between items-center gap-4">
-        <p className="text-xs text-black/55">© 2026 QuickDine. All rights reserved.</p>
+        <p className="text-xs text-black/55">
+          © 2026 QuickDine. All rights reserved.
+        </p>
 
         <div className="flex gap-6">
           {bottomLinks.map((link) => (
-            <Link key={link.label} to={link.path} className="text-xs text-black/55 hover:text-secondary">
+            <Link
+              key={link.label}
+              to={link.path}
+              className="text-xs text-black/55 hover:text-secondary"
+            >
               {link.label}
             </Link>
           ))}
