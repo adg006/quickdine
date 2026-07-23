@@ -64,7 +64,6 @@ export default function AdminApprovals({ pendingRestaurants, otherRestaurants, b
         )}
       </div>
 
-      {/* Section B: Existing Restaurant Partners */}
       <div className="space-y-4">
         <h3 className="font-display text-lg font-medium text-primary">Registered Establishments ({otherRestaurants.length})</h3>
 
