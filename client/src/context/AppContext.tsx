@@ -1,4 +1,5 @@
 import React, { useState, useEffect, createContext, useContext } from "react";
+
 import { dummyUser } from "../assets/assets.ts";
 
 interface UserType {
@@ -17,7 +18,13 @@ interface AppContextType {
   isAuthModalOpen: boolean;
   setAuthModalOpen: (open: boolean) => void;
   login: (email: string, password: string) => Promise<boolean>;
-  register: (name: string, email: string, password: string, phone?: string, role?: string) => Promise<boolean>;
+  register: (
+    name: string,
+    email: string,
+    password: string,
+    phone?: string,
+    role?: string,
+  ) => Promise<boolean>;
   logout: () => void;
 }
 
@@ -29,7 +36,9 @@ const AppContext = createContext<AppContextType | undefined>(undefined);
 
 export const AppContextProvider = ({ children }: Props) => {
   const [user, setUser] = useState<UserType | null>(null);
-  const [token, setToken] = useState<string | null>(localStorage.getItem("token"));
+  const [token, setToken] = useState<string | null>(
+    localStorage.getItem("token"),
+  );
   const [loading, setLoading] = useState<boolean>(true);
   const [isAuthModalOpen, setAuthModalOpen] = useState<boolean>(false);
 
@@ -42,7 +51,13 @@ export const AppContextProvider = ({ children }: Props) => {
     return true;
   };
 
-  const register = async (name: string, email: string, password: string, phone?: string, role?: string): Promise<boolean> => {
+  const register = async (
+    name: string,
+    email: string,
+    password: string,
+    phone?: string,
+    role?: string,
+  ): Promise<boolean> => {
     console.log(name, email, password, phone, role);
     setToken(dummyUser.token);
     setUser(dummyUser as any);
