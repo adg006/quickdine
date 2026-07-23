@@ -3,9 +3,9 @@ import Home from "./pages/Home.tsx";
 import Search from "./pages/Search.tsx";
 import RestaurantDetail from "./pages/RestaurantDetail.tsx";
 import BookingConfirmation from "./pages/BookingConfirmation.tsx";
-import Dashboard from "./pages/Dashboard.tsx";
-import OwnerDashboard from "./pages/owner/OwnerDashboard.tsx";
-import AdminDashboard from "./pages/admin/AdminDashboard.tsx";
+// import Dashboard from "./pages/Dashboard.tsx";
+// import OwnerDashboard from "./pages/owner/OwnerDashboard.tsx";
+// import AdminDashboard from "./pages/admin/AdminDashboard.tsx";
 import ProtectedRoute from "./components/ProtectedRoute.tsx";
 import { Toaster } from "react-hot-toast";
 
@@ -39,7 +39,7 @@ export default function App() {
             </ProtectedRoute>
           }
         />
-        <Route
+        {/* <Route
           path="/dashboard"
           element={
             <ProtectedRoute>
@@ -62,7 +62,7 @@ export default function App() {
               <AdminDashboard />
             </ProtectedRoute>
           }
-        />
+        /> */}
       </Routes>
     </>
   );
