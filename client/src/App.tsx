@@ -1,7 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home.tsx";
-// import Search from "./pages/Search.tsx";
-// import RestaurantDetail from "./pages/RestaurantDetail.tsx";
+import Search from "./pages/Search.tsx";
+import RestaurantDetail from "./pages/RestaurantDetail.tsx";
 // import BookingConfirmation from "./pages/BookingConfirmation.tsx";
 // import Dashboard from "./pages/Dashboard.tsx";
 // import OwnerDashboard from "./pages/owner/OwnerDashboard.tsx";
@@ -29,8 +29,8 @@ export default function App() {
 
       <Routes>
         <Route path="/" element={<Home />} />
-        {/* <Route path="/search" element={<Search />} /> */}
-        {/* <Route path="/restaurant/:slug" element={<RestaurantDetail />} /> */}
+        <Route path="/search" element={<Search />} />
+        <Route path="/restaurant/:slug" element={<RestaurantDetail />} />
         {/* <Route
           path="/booking/:slug"
           element={
