@@ -1,14 +1,14 @@
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
-import { useAppContext } from "../context/AppContext.tsx";
+// import { useAppContext } from "../context/AppContext.tsx";
 
 const Navbar = () => {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   const [scrolled, setScrolled] = useState(false);
 
-  const { user, logout, setAuthModalOpen } = useAppContext();
+  // const { user, logout, setAuthModalOpen } = useAppContext();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -20,13 +20,13 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const handleDashboardClick = () => {
-    if (!user) {
-      setAuthModalOpen(true);
-    } else {
-      navigate("/dashboard");
-    }
-  };
+  // const handleDashboardClick = () => {
+  //   if (!user) {
+  //     setAuthModalOpen(true);
+  //   } else {
+  //     navigate("/dashboard");
+  //   }
+  // };
 
   return (
     <nav className={`fixed top-0 w-full z-40 transition-all duration-300 ${scrolled ? "bg-white/95 backdrop-blur-md h-16 shadow-sm border-b border-outline-variant/10" : "bg-transparent h-20 border-b border-transparent"}`}>
@@ -48,9 +48,11 @@ const Navbar = () => {
             Restaurants
           </Link>
 
-          <button onClick={handleDashboardClick} className={`text-sm transition-colors pb-1 border-b-2 border-transparent cursor-pointer text-left ${location.pathname === "/dashboard" ? "text-secondary border-secondary" : scrolled || location.pathname !== "/" ? "text-black/55 hover:text-primary" : "text-white/80 hover:text-white"}`}>
+          {/* <button onClick={handleDashboardClick} className={`text-sm transition-colors pb-1 border-b-2 border-transparent cursor-pointer text-left ${location.pathname === "/dashboard" ? "text-secondary border-secondary" : scrolled || location.pathname !== "/" ? "text-black/55 hover:text-primary" : "text-white/80 hover:text-white"}`}>
             My Bookings
-          </button>
+          </button> */}
+
+          <button className={`text-sm transition-colors pb-1 border-b-2 border-transparent cursor-pointer text-left ${location.pathname === "/dashboard" ? "text-secondary border-secondary" : scrolled || location.pathname !== "/" ? "text-black/55 hover:text-primary" : "text-white/80 hover:text-white"}`}>My Bookings</button>
         </div>
       </div>
     </nav>
