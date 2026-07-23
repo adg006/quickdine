@@ -1,17 +1,8 @@
+import { BeefIcon, Building2Icon, CroissantIcon, FishIcon, GlobeIcon, LeafIcon, MailIcon, Share2Icon, UtensilsCrossedIcon } from "lucide-react";
+
 import hero_bg_img from "./hero_bg_img.png";
 import default_restaurant_img from "./default_restaurant_Img.jpeg";
 import membership_section_img from "./membership_section_img.png";
-import {
-  BeefIcon,
-  Building2Icon,
-  CroissantIcon,
-  FishIcon,
-  GlobeIcon,
-  LeafIcon,
-  MailIcon,
-  Share2Icon,
-  UtensilsCrossedIcon,
-} from "lucide-react";
 
 export const assets = {
   hero_bg_img,
@@ -24,8 +15,7 @@ export const dummyReviews = [
     _id: "dummy-rev-1",
     userName: "Emily Watson",
     rating: 5,
-    comment:
-      "Absolutely phenomenal experience! The ambiance was perfect, and the food was cooked to perfection. A must-visit!",
+    comment: "Absolutely phenomenal experience! The ambiance was perfect, and the food was cooked to perfection. A must-visit!",
     visitedDate: "2026-06-10T12:00:00.000Z",
     createdAt: "2026-06-10T12:00:00.000Z",
   },
@@ -33,8 +23,7 @@ export const dummyReviews = [
     _id: "dummy-rev-2",
     userName: "Marcus Vance",
     rating: 4,
-    comment:
-      "The signature dishes were incredible and the staff was extremely attentive. Will definitely come back for another dinner.",
+    comment: "The signature dishes were incredible and the staff was extremely attentive. Will definitely come back for another dinner.",
     visitedDate: "2026-06-08T18:30:00.000Z",
     createdAt: "2026-06-08T18:30:00.000Z",
   },
@@ -42,8 +31,7 @@ export const dummyReviews = [
     _id: "dummy-rev-3",
     userName: "Sophia Loren",
     rating: 5,
-    comment:
-      "Every course of the tasting menu was a delightful surprise. The pairings were exquisite. High-end dining at its finest.",
+    comment: "Every course of the tasting menu was a delightful surprise. The pairings were exquisite. High-end dining at its finest.",
     visitedDate: "2026-06-05T20:15:00.000Z",
     createdAt: "2026-06-05T20:15:00.000Z",
   },
@@ -107,8 +95,7 @@ export const dummyRestaurant = [
     _id: "6a32a3c50e88c825d8873f7d",
     name: "L'Essence",
     slug: "l-essence",
-    description:
-      "An intimate, Parisian-inspired fine dining chamber wrapped in dark velvet and soft golden candle glow. L'Essence specializes in meticulous plating of haute gastronomy, creating a rich sensory dialogue between modern culinary innovation and classic romance.",
+    description: "An intimate, Parisian-inspired fine dining chamber wrapped in dark velvet and soft golden candle glow. L'Essence specializes in meticulous plating of haute gastronomy, creating a rich sensory dialogue between modern culinary innovation and classic romance.",
     cuisine: "French",
     priceRange: "$$$$",
     rating: 4.9,
@@ -131,8 +118,7 @@ export const dummyRestaurant = [
     _id: "6a32a3c50e88c825d8873f7a",
     name: "Terraza Cielo",
     slug: "terraza-cielo",
-    description:
-      "A sun-drenched rooftop oasis celebrating Italian and Mediterranean lifestyles. Featuring floor-to-ceiling foliage, white marble bistro tables, and panoramic skyline views, Terraza Cielo serves hand-crafted pastas and coastal seafood paired with bright botanical cocktails.",
+    description: "A sun-drenched rooftop oasis celebrating Italian and Mediterranean lifestyles. Featuring floor-to-ceiling foliage, white marble bistro tables, and panoramic skyline views, Terraza Cielo serves hand-crafted pastas and coastal seafood paired with bright botanical cocktails.",
     cuisine: "Italian",
     priceRange: "$$$",
     rating: 4.7,
@@ -142,15 +128,7 @@ export const dummyRestaurant = [
     image: "/restaurant_3.jpg",
     chef: "Elena Rossi",
     tags: ["Rooftop", "Skyline Views", "Handmade Pasta", "Craft Cocktails"],
-    availableSlots: [
-      "12:00",
-      "13:00",
-      "17:00",
-      "18:00",
-      "19:00",
-      "20:00",
-      "21:00",
-    ],
+    availableSlots: ["12:00", "13:00", "17:00", "18:00", "19:00", "20:00", "21:00"],
     featured: true,
     exclusive: false,
     owner: "6a32a3c50e88c825d8873f77",
@@ -163,8 +141,7 @@ export const dummyRestaurant = [
     _id: "6a32a3c50e88c825d8873f79",
     name: "Kuro Omakase",
     slug: "kuro-omakase",
-    description:
-      "An atmospheric, moody sanctuary of premium Japanese gastronomy. Seated at a dark, polished basalt-stone counter, guests experience a deeply focused sushi omakase. Chef Kenji Sato translates the freshest seasonal ingredients directly from Tokyo's fish markets into elegant, edible poetry.",
+    description: "An atmospheric, moody sanctuary of premium Japanese gastronomy. Seated at a dark, polished basalt-stone counter, guests experience a deeply focused sushi omakase. Chef Kenji Sato translates the freshest seasonal ingredients directly from Tokyo's fish markets into elegant, edible poetry.",
     cuisine: "Japanese",
     priceRange: "$$$$",
     rating: 4.8,
@@ -187,8 +164,7 @@ export const dummyRestaurant = [
     _id: "6a32a3c50e88c825d8873f7c",
     name: "Flora Garden",
     slug: "flora-garden",
-    description:
-      "A bright, airy conservatory celebrating organic, plant-forward gastronomy. Nestled under glass ceilings with floor-to-ceiling botanicals, Flora Garden transforms fresh seasonal crops into delicate, high-end editorial culinary works of art.",
+    description: "A bright, airy conservatory celebrating organic, plant-forward gastronomy. Nestled under glass ceilings with floor-to-ceiling botanicals, Flora Garden transforms fresh seasonal crops into delicate, high-end editorial culinary works of art.",
     cuisine: "Vegetarian",
     priceRange: "$$$",
     rating: 4.8,
@@ -211,8 +187,7 @@ export const dummyRestaurant = [
     _id: "6a32a3c50e88c825d8873f7b",
     name: "Ember Grille",
     slug: "ember-grille",
-    description:
-      "An upscale modern steakhouse with exposed brick walls, leather booths, and warm, industrial-chic pendant lighting. Offering Prime dry-aged cuts grilled over live hickory and cherrywood embers. Gourmet dining elevated into a sophisticated nocturnal experience.",
+    description: "An upscale modern steakhouse with exposed brick walls, leather booths, and warm, industrial-chic pendant lighting. Offering Prime dry-aged cuts grilled over live hickory and cherrywood embers. Gourmet dining elevated into a sophisticated nocturnal experience.",
     cuisine: "Steakhouse",
     priceRange: "$$$$",
     rating: 4.6,
@@ -235,8 +210,7 @@ export const dummyRestaurant = [
     _id: "6a32a3c50e88c825d8873f78",
     name: "L'Artiste",
     slug: "l-artiste",
-    description:
-      "An avant-garde journey through modern French gastronomy. L'Artiste blends classic French culinary foundations with contemporary visual artistry, resulting in a sensory dining experience that is both theatrical and deeply satisfying. Set in a gorgeous high-ceilinged room with minimal charcoal and gold design language.",
+    description: "An avant-garde journey through modern French gastronomy. L'Artiste blends classic French culinary foundations with contemporary visual artistry, resulting in a sensory dining experience that is both theatrical and deeply satisfying. Set in a gorgeous high-ceilinged room with minimal charcoal and gold design language.",
     cuisine: "French",
     priceRange: "$$$$",
     rating: 4.9,
@@ -246,18 +220,7 @@ export const dummyRestaurant = [
     image: "/restaurant_4.png",
     chef: "Jean-Pierre Dubois",
     tags: ["Michelin Star", "Fine Dining", "Tasting Menu", "Romantic"],
-    availableSlots: [
-      "17:00",
-      "17:30",
-      "18:00",
-      "18:30",
-      "19:00",
-      "19:30",
-      "20:00",
-      "20:30",
-      "21:00",
-      "21:30",
-    ],
+    availableSlots: ["17:00", "17:30", "18:00", "18:30", "19:00", "19:30", "20:00", "20:30", "21:00", "21:30"],
     featured: true,
     exclusive: true,
     owner: "6a32a3c50e88c825d8873f77",
@@ -270,8 +233,7 @@ export const dummyRestaurant = [
     _id: "6a32a3c50e88c825d8873f7d",
     name: "L'Essence",
     slug: "l-essence",
-    description:
-      "An intimate, Parisian-inspired fine dining chamber wrapped in dark velvet and soft golden candle glow. L'Essence specializes in meticulous plating of haute gastronomy, creating a rich sensory dialogue between modern culinary innovation and classic romance.",
+    description: "An intimate, Parisian-inspired fine dining chamber wrapped in dark velvet and soft golden candle glow. L'Essence specializes in meticulous plating of haute gastronomy, creating a rich sensory dialogue between modern culinary innovation and classic romance.",
     cuisine: "French",
     priceRange: "$$$$",
     rating: 4.9,
@@ -294,8 +256,7 @@ export const dummyRestaurant = [
     _id: "6a32a3c50e88c825d8873f7a",
     name: "Terraza Cielo",
     slug: "terraza-cielo",
-    description:
-      "A sun-drenched rooftop oasis celebrating Italian and Mediterranean lifestyles. Featuring floor-to-ceiling foliage, white marble bistro tables, and panoramic skyline views, Terraza Cielo serves hand-crafted pastas and coastal seafood paired with bright botanical cocktails.",
+    description: "A sun-drenched rooftop oasis celebrating Italian and Mediterranean lifestyles. Featuring floor-to-ceiling foliage, white marble bistro tables, and panoramic skyline views, Terraza Cielo serves hand-crafted pastas and coastal seafood paired with bright botanical cocktails.",
     cuisine: "Italian",
     priceRange: "$$$",
     rating: 4.7,
@@ -305,15 +266,7 @@ export const dummyRestaurant = [
     image: "/restaurant_3.jpg",
     chef: "Elena Rossi",
     tags: ["Rooftop", "Skyline Views", "Handmade Pasta", "Craft Cocktails"],
-    availableSlots: [
-      "12:00",
-      "13:00",
-      "17:00",
-      "18:00",
-      "19:00",
-      "20:00",
-      "21:00",
-    ],
+    availableSlots: ["12:00", "13:00", "17:00", "18:00", "19:00", "20:00", "21:00"],
     featured: true,
     exclusive: false,
     owner: "6a32a3c50e88c825d8873f77",
@@ -445,8 +398,4 @@ export const dummyAdminStats = {
   ],
 };
 
-export const dummyFeaturedRestaurants = [
-  dummyRestaurant[0],
-  dummyRestaurant[1],
-  dummyRestaurant[2],
-];
+export const dummyFeaturedRestaurants = [dummyRestaurant[0], dummyRestaurant[1], dummyRestaurant[2]];
