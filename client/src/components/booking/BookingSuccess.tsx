@@ -9,7 +9,13 @@ interface BookingSuccessProps {
   guests: string;
 }
 
-export default function BookingSuccess({ confirmedBooking, restaurant, date, slot, guests }: BookingSuccessProps) {
+export default function BookingSuccess({
+  confirmedBooking,
+  restaurant,
+  date,
+  slot,
+  guests,
+}: BookingSuccessProps) {
   if (!confirmedBooking || !restaurant) return null;
 
   return (
@@ -19,16 +25,25 @@ export default function BookingSuccess({ confirmedBooking, restaurant, date, slo
       </div>
 
       <div className="space-y-3">
-        <h2 className="font-display text-3xl font-medium text-primary">Reservation Confirmed</h2>
+        <h2 className="font-display text-3xl font-medium text-primary">
+          Reservation Confirmed
+        </h2>
+
         <p className="text-xs text-black/55 max-w-sm mx-auto leading-relaxed">
-          A curated dining experience has been successfully reserved for you at <span className="text-primary">{restaurant.name}</span>.
+          A curated dining experience has been successfully reserved for you at{" "}
+          <span className="text-primary">{restaurant.name}</span>.
         </p>
       </div>
 
       <div className="bg-surface-container-low p-6 rounded-md space-y-4 text-left border border-outline-variant/10">
         <div className="flex justify-between items-center pb-3 border-b border-outline-variant/10">
-          <span className="text-[10px] font-medium text-black/55 tracking-wider uppercase">REFERENCE CODE</span>
-          <span className="text-sm font-medium text-secondary">{confirmedBooking.bookingId}</span>
+          <span className="text-[10px] font-medium text-black/55 tracking-wider uppercase">
+            REFERENCE CODE
+          </span>
+
+          <span className="text-sm font-medium text-secondary">
+            {confirmedBooking.bookingId}
+          </span>
         </div>
 
         <div className="space-y-3 text-xs text-on-surface">
@@ -63,11 +78,17 @@ export default function BookingSuccess({ confirmedBooking, restaurant, date, slo
       </div>
 
       <div className="flex flex-col sm:flex-row gap-4 pt-4">
-        <Link to="/dashboard" className="flex-1 bg-primary hover:bg-primary-container text-white py-3.5 px-4 text-xs font-medium tracking-widest uppercase hover:text-secondary text-center cursor-pointer transition-colors">
+        <Link
+          to="/dashboard"
+          className="flex-1 bg-primary hover:bg-primary-container text-white py-3.5 px-4 text-xs font-medium tracking-widest uppercase hover:text-secondary text-center cursor-pointer transition-colors"
+        >
           MY BOOKINGS
         </Link>
 
-        <Link to="/" className="flex-1 border border-outline-variant/50 hover:border-primary text-primary py-3.5 px-4 text-xs font-medium tracking-widest uppercase text-center cursor-pointer transition-colors">
+        <Link
+          to="/"
+          className="flex-1 border border-outline-variant/50 hover:border-primary text-primary py-3.5 px-4 text-xs font-medium tracking-widest uppercase text-center cursor-pointer transition-colors"
+        >
           DISCOVER MORE
         </Link>
       </div>
