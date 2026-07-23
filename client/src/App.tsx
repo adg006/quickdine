@@ -2,11 +2,11 @@ import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home.tsx";
 import Search from "./pages/Search.tsx";
 import RestaurantDetail from "./pages/RestaurantDetail.tsx";
-// import BookingConfirmation from "./pages/BookingConfirmation.tsx";
-// import Dashboard from "./pages/Dashboard.tsx";
-// import OwnerDashboard from "./pages/owner/OwnerDashboard.tsx";
-// import AdminDashboard from "./pages/admin/AdminDashboard.tsx";
-// import ProtectedRoute from "./components/ProtectedRoute.tsx";
+import BookingConfirmation from "./pages/BookingConfirmation.tsx";
+import Dashboard from "./pages/Dashboard.tsx";
+import OwnerDashboard from "./pages/owner/OwnerDashboard.tsx";
+import AdminDashboard from "./pages/admin/AdminDashboard.tsx";
+import ProtectedRoute from "./components/ProtectedRoute.tsx";
 import { Toaster } from "react-hot-toast";
 
 export default function App() {
@@ -31,38 +31,38 @@ export default function App() {
         <Route path="/" element={<Home />} />
         <Route path="/search" element={<Search />} />
         <Route path="/restaurant/:slug" element={<RestaurantDetail />} />
-        {/* <Route
+        <Route
           path="/booking/:slug"
           element={
             <ProtectedRoute>
               <BookingConfirmation />
             </ProtectedRoute>
           }
-        /> */}
-        {/* <Route
+        />
+        <Route
           path="/dashboard"
           element={
             <ProtectedRoute>
               <Dashboard />
             </ProtectedRoute>
           }
-        /> */}
-        {/* <Route
+        />
+        <Route
           path="/owner/dashboard"
           element={
             <ProtectedRoute allowedRoles={["owner"]}>
               <OwnerDashboard />
             </ProtectedRoute>
           }
-        /> */}
-        {/* <Route
+        />
+        <Route
           path="/admin/dashboard"
           element={
             <ProtectedRoute allowedRoles={["admin"]}>
               <AdminDashboard />
             </ProtectedRoute>
           }
-        /> */}
+        />
       </Routes>
     </>
   );
