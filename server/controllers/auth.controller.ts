@@ -2,6 +2,7 @@ import { Request, Response } from "express";
 import jwt from "jsonwebtoken";
 import bcrypt from "bcrypt";
 import { UserModel } from "../models/user.model.js";
+import { AuthRequest } from "../middlewares/auth.middleware.js";
 
 // Generate a JWT token
 const generateToken = (id: string) => {
@@ -107,14 +108,17 @@ export const loginUser = async (req: Request, res: Response): Promise<void> => {
 };
 
 // Get a user
-export const getUser = async (req: Request, res: Response): Promise<void> => {
+export const getUser = async (
+  req: AuthRequest,
+  res: Response,
+): Promise<void> => {
   try {
-    const user = await UserModel.findById(req.params.id).select("-password");
-    if (!user) {
-      res.status(404).json({ message: "User not found" });
+    if (!req.user) {
+      res.status(401).json({ message: "Not authorized" });
       return;
     }
-    res.status(200).json(user);
+
+    res.json(req.user);
   } catch (error: any) {
     console.error(error);
     res
