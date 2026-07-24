@@ -1,21 +1,18 @@
-import { Request, Response } from "express";
 import jwt from "jsonwebtoken";
 import bcrypt from "bcrypt";
+
+import { Request, Response } from "express";
+
 import { UserModel } from "../models/user.model.js";
 import { AuthRequest } from "../middlewares/auth.middleware.js";
 
 // Generate a JWT token
 const generateToken = (id: string) => {
-  return jwt.sign({ id }, process.env.JWT_SECRET as string, {
-    expiresIn: "30d",
-  });
+  return jwt.sign({ id }, process.env.JWT_SECRET as string, { expiresIn: "30d" });
 };
 
 // Register a new user
-export const registerUser = async (
-  req: Request,
-  res: Response,
-): Promise<void> => {
+export const registerUser = async (req: Request, res: Response): Promise<void> => {
   try {
     const { name, email, password, phone, role } = req.body;
 
@@ -59,9 +56,7 @@ export const registerUser = async (
     }
   } catch (error: any) {
     console.error(error);
-    res
-      .status(500)
-      .json({ error: error.message, message: "Internal server error" });
+    res.status(500).json({ error: error.message, message: "Internal server error" });
   }
 };
 
@@ -101,28 +96,20 @@ export const loginUser = async (req: Request, res: Response): Promise<void> => {
     });
   } catch (error: any) {
     console.error(error);
-    res
-      .status(500)
-      .json({ error: error.message, message: "Internal server error" });
+    res.status(500).json({ error: error.message, message: "Internal server error" });
   }
 };
 
 // Get a user
-export const getUser = async (
-  req: AuthRequest,
-  res: Response,
-): Promise<void> => {
+export const getUser = async (req: AuthRequest, res: Response): Promise<void> => {
   try {
     if (!req.user) {
       res.status(401).json({ message: "Not authorized" });
       return;
     }
-
     res.json(req.user);
   } catch (error: any) {
     console.error(error);
-    res
-      .status(500)
-      .json({ error: error.message, message: "Internal server error" });
+    res.status(500).json({ error: error.message, message: "Internal server error" });
   }
 };

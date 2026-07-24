@@ -1,28 +1,19 @@
+import jwt from "jsonwebtoken";
 import { NextFunction, Request, Response } from "express";
 import { IUser, UserModel } from "../models/user.model.js";
-import jwt from "jsonwebtoken";
 
 export interface AuthRequest extends Request {
   user?: IUser;
 }
 
 // Middleware to protect routes and ensure the user is authenticated
-export const protect = async (
-  req: AuthRequest,
-  res: Response,
-  next: NextFunction,
-): Promise<void> => {
+export const protect = async (req: AuthRequest, res: Response, next: NextFunction): Promise<void> => {
   let token: string | undefined;
 
-  if (
-    req.headers.authorization &&
-    req.headers.authorization.startsWith("Bearer")
-  ) {
+  if (req.headers.authorization && req.headers.authorization.startsWith("Bearer")) {
     try {
       token = req.headers.authorization.split(" ")[1];
-      const decoded = jwt.verify(token, process.env.JWT_SECRET!) as {
-        id: string;
-      };
+      const decoded = jwt.verify(token, process.env.JWT_SECRET!) as { id: string };
       const user = await UserModel.findById(decoded.id).select("-password");
 
       if (!user) {
@@ -44,11 +35,7 @@ export const protect = async (
 };
 
 // Middleware to restrict access to admin users only
-export const adminOnly = (
-  req: AuthRequest,
-  res: Response,
-  next: NextFunction,
-): void => {
+export const adminOnly = (req: AuthRequest, res: Response, next: NextFunction): void => {
   if (req.user && req.user.role === "admin") {
     next();
   } else {
@@ -57,11 +44,7 @@ export const adminOnly = (
 };
 
 // Middleware to restrict access to owner users only
-export const ownerOnly = (
-  req: AuthRequest,
-  res: Response,
-  next: NextFunction,
-): void => {
+export const ownerOnly = (req: AuthRequest, res: Response, next: NextFunction): void => {
   if (req.user && (req.user.role === "owner" || req.user.role === "admin")) {
     next();
   } else {
