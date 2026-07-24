@@ -1,5 +1,6 @@
 import { Document, model, Schema } from "mongoose";
 
+// Define the User interface
 export interface IUser extends Document {
   name: string;
   email: string;
@@ -10,6 +11,7 @@ export interface IUser extends Document {
   updatedAt: Date;
 }
 
+// Define the User schema
 const userSchema = new Schema<IUser>(
   {
     name: { type: String, required: true },
@@ -23,6 +25,7 @@ const userSchema = new Schema<IUser>(
   },
 );
 
+// Set the toJSON transformation to exclude the password field when converting to JSON
 userSchema.set("toJSON", {
   transform: (doc, ret) => {
     delete ret.password;
