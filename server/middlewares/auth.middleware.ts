@@ -42,3 +42,29 @@ export const protect = async (
     return;
   }
 };
+
+// Middleware to restrict access to admin users only
+export const adminOnly = (
+  req: AuthRequest,
+  res: Response,
+  next: NextFunction,
+): void => {
+  if (req.user && req.user.role === "admin") {
+    next();
+  } else {
+    res.status(403).json({ message: "Access denied, admin only" });
+  }
+};
+
+// Middleware to restrict access to owner users only
+export const ownerOnly = (
+  req: AuthRequest,
+  res: Response,
+  next: NextFunction,
+): void => {
+  if (req.user && (req.user.role === "owner" || req.user.role === "admin")) {
+    next();
+  } else {
+    res.status(403).json({ message: "Access denied, owner only" });
+  }
+};
